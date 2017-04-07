@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "zbp_smarttable.zbp_smarttable",
+        "description": "Smart Table Demo",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#zbp_smarttable-Display",
+        "navigationComponentName": "zbp_smarttable",
+        "intentSemanticObject": "zbp_smarttable",
+        "intentAction": "Display",
+        "html5ApplicationName": "zbpsmarttable",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "00000000-0000-1111-0000-00000000"
+        ],
+        "contentPackages": [
+            "00000000-0000-2222-0000-00000000"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Smart Table Demo",
+        "subtitle": "Cadaxo Smart Table Demo",
+        "searchKeywords": "Smart Table Demo,Cadaxo Smart Table Demo",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

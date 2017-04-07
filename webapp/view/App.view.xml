@@ -1,0 +1,59 @@
+<mvc:View 
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="zbp_smarttable.controller.App"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<App id="app">
+		<pages>
+			<Page title="Business Partners in Smart Table" class="sapUiResponsiveContentPadding">			
+				<content>
+					<VBox fitContainer="true">
+						<smartFilterBar:SmartFilterBar 
+							id="smartFilterBar"
+							entityType="BusinessPartner"
+							persistencyKey="SmartFilterPKey">
+							<smartFilterBar:controlConfiguration>
+							</smartFilterBar:controlConfiguration>
+						</smartFilterBar:SmartFilterBar>
+						<smartTable:SmartTable 
+							id="smartTable_ResponsiveTable"
+							smartFilterId="smartFilterBar" 
+							tableType="ResponsiveTable" 
+							editable="false"
+							editTogglable="true"
+							entitySet="BusinessPartnerSet" 
+							useVariantManagement="false"
+							useTablePersonalisation="true" 
+							header="Business Partners" 
+							showRowCount="true"
+							useExportToExcel="true" 
+							enableAutoBinding="true"
+							customData:useSmartField="true"
+							showFullScreenButton="true"
+							persistencyKey="SmartTablePKey">
+							<smartTable:customToolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer />
+									<!--<Button icon="sap-icon://add" press="onAdd"/>
+									<Button icon="sap-icon://delete" enabled="false" />-->
+									<Button id="saveButton" icon="sap-icon://save" press="onSave" enabled="true" />
+								</OverflowToolbar>	
+							</smartTable:customToolbar>
+							<Table>
+							</Table>
+						</smartTable:SmartTable>
+					</VBox>	
+				</content>
+				<footer>
+					<Bar>
+						<contentMiddle>
+							<Text text="©Cadaxo 2017" />
+						</contentMiddle>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

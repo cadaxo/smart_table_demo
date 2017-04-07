@@ -1,0 +1,42 @@
+[{
+	"Partner": "111",
+	"NameLast": "SachaMock",
+	"NameFirst": "DusanMock"
+}, {
+	"Partner": "666",
+	"NameLast": "MuseterMock",
+	"NameFirst": "MaxMock"
+}, {
+	"Partner": "101",
+	"NameLast": "NameLast 1",
+	"NameFirst": "NameFirst 1",
+	"__metadata": {
+		"uri": "BusinessPartnerSet('Partner%201')",
+		"type": "ZUI5_BP_SMARTTABLE_SRV.BusinessPartner"
+	}
+}, {
+	"Partner": "102",
+	"NameLast": "NameLast 2",
+	"NameFirst": "NameFirst 2",
+	"__metadata": {
+		"uri": "BusinessPartnerSet('Partner%202')",
+		"type": "ZUI5_BP_SMARTTABLE_SRV.BusinessPartner"
+	}
+}, {
+	"Partner": "103",
+	"NameLast": "NameLast 3",
+	"NameFirst": "NameFirst 3",
+	"__metadata": {
+		"uri": "BusinessPartnerSet('Partner%203')",
+		"type": "ZUI5_BP_SMARTTABLE_SRV.BusinessPartner"
+	}
+}, {
+	"Partner": "104",
+	"NameLast": "NameLast 4",
+	"NameFirst": "NameFirst 4",
+	"__metadata": {
+		"uri": "BusinessPartnerSet('Partner%204')",
+		"type": "ZUI5_BP_SMARTTABLE_SRV.BusinessPartner"
+	}
+}
+]
