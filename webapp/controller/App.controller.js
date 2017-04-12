@@ -58,18 +58,28 @@ sap.ui.define([
 	     	});
 		},
 		onDelete: function(oEvent){
-			this._getSmartTableById().getTable().getSelectedItems().forEach(function(oItem){
-				var sPath = oItem.getBindingContextPath();	
-				var mParameters = {"groupId":"deleteGroup"};
-				oItem.getBindingContext().getModel().remove(sPath, mParameters);
+			MessageBox.warning(this.getResourceBundle().getText("confirmDelete"), {
+			    title: this.getResourceBundle().getText("delete"),                                    
+			    onClose: this._deleteAction.bind(this),                                    
+			    actions: [sap.m.MessageBox.Action.DELETE, sap.m.MessageBox.Action.CANCEL],
+			    textDirection: sap.ui.core.TextDirection.Inherit    
 			});
-			
-			var oModel = this.getView().getModel();
-			oModel.submitChanges({
-	      		groupId: "deleteGroup", 
-	        	success: this._handleDeleteSuccess.bind(this),
-	        	error: this._handleDeleteError.bind(this)
-	     	});
+		},
+		_deleteAction: function(oAction) {
+			if(oAction === sap.m.MessageBox.Action.DELETE) {
+				this._getSmartTableById().getTable().getSelectedItems().forEach(function(oItem){
+					var sPath = oItem.getBindingContextPath();	
+					var mParameters = {"groupId":"deleteGroup"};
+					oItem.getBindingContext().getModel().remove(sPath, mParameters);
+				});
+				
+				var oModel = this.getView().getModel();
+				oModel.submitChanges({
+		      		groupId: "deleteGroup", 
+		        	success: this._handleDeleteSuccess.bind(this),
+		        	error: this._handleDeleteError.bind(this)
+		     	});
+			}
 		},
 		_handleUpdateSuccess: function(oData) {
 			MessageToast.show(this.getResourceBundle().getText("updateSuccess"));
@@ -79,6 +89,7 @@ sap.ui.define([
 		},
 		_handleDeleteSuccess: function(oData) {
 			MessageToast.show(this.getResourceBundle().getText("deleteSuccess"));
+			this.getView().byId("deleteButton").setEnabled(false);
 		},
 		_handleDeleteError: function(oError) {
 			MessageBox.error(this.getResourceBundle().getText("deleteError"));
