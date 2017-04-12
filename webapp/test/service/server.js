@@ -6,7 +6,11 @@ sap.ui.define([
 	return {
 
 		init: function () {
-
+			
+			// enable 'mock' variant management
+			jQuery.sap.require("sap.ui.fl.FakeLrepConnector");
+			sap.ui.fl.FakeLrepConnector.enableFakeConnector("./test/service/component-test-changes.json");
+			
 			// create
 			var oMockServer = new MockServer({
 				rootUri: "/destinations/a4h_750_http_root/sap/opu/odata/sap/ZUI5_BP_SMARTTABLE_SRV/"
