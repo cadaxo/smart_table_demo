@@ -14,11 +14,11 @@ We have also implemented [a live version](https://zbpsmarttable-a17cc5c5c.dispat
 - All [Table Personalization Dialog](https://experience.sap.com/fiori-design-web/table-personalization-dialog/) Features
 - Filter Bar
 - Toggle Edit/Read Mode
+- Single and Multiple Delete item Option
 - Save Data to DB
 
 ## Planned Features
 - Add Date, Checkbox, Drobdown elements to View
-- Add Single and Multiple Delete item Option
 - Add Insert item Option
 - Variant Management
 
@@ -29,5 +29,3 @@ Twitter: [sacha_dusan](http://twitter.com/sacha_dusan)
 
 ## License
 This project is licensed under the MIT license.
-
-
