@@ -14,9 +14,9 @@ sap.ui.define([
 			this.getView().getModel().metadataLoaded().then(this._onCreateModeMetadataLoaded.bind(this));
 		},
 		_editToggled: function() {
-			//var oSmartTable = this.getView().byId("smartTable_ResponsiveTable");
-			//var sMode = oSmartTable.getEditable() ? "MultiSelect" : "None";
-			//	oSmartTable.getTable().setMode(sMode);
+			var oSmartTable = this.getView().byId("smartTable_ResponsiveTable");
+			var sMode = oSmartTable.getEditable() ? "MultiSelect" : "None";
+			oSmartTable.getTable().setMode(sMode);
 		},
 		_onCreateModeMetadataLoaded: function() {
 			this.getView().getModel().setUseBatch(true);

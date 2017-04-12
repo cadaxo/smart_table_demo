@@ -1,9 +1,11 @@
 <mvc:View 
+	xmlns:core="sap.ui.core"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	controllerName="zbp_smarttable.controller.App"
 	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:smartField="sap.ui.comp.smartfield"
 	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<App id="app">
 		<pages>
@@ -36,13 +38,11 @@
 							<smartTable:customToolbar>
 								<OverflowToolbar>
 									<ToolbarSpacer />
-									<!--<Button icon="sap-icon://add" press="onAdd"/>
-									<Button icon="sap-icon://delete" enabled="false" />-->
+									<Button icon="sap-icon://add" press="onAdd"/>
+									<Button icon="sap-icon://delete" enabled="false" />
 									<Button id="saveButton" icon="sap-icon://save" press="onSave" enabled="true" />
 								</OverflowToolbar>	
 							</smartTable:customToolbar>
-							<Table>
-							</Table>
 						</smartTable:SmartTable>
 					</VBox>	
 				</content>

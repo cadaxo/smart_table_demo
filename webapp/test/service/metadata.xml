@@ -13,6 +13,9 @@
 				<Property Name="Partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="BusinessPartner" sap:updatable="false"/>
 				<Property Name="NameLast" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Last name" />
 				<Property Name="NameFirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="First name" />
+				<Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Role" />
+				<Property Name="Xdele" Type="Edm.Boolean" Nullable="false" sap:label="Archive Flag" />
+				<Property Name="Crdattime" Type="Edm.DateTime" Nullable="false" sap:label="Created On" />
 			</EntityType>
 			<EntityContainer Name="ZUI5_BP_SMARTTABLE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
 				<EntitySet Name="BusinessPartnerSet" EntityType="ZUI5_BP_SMARTTABLE_SRV.BusinessPartner" sap:content-version="1"/>
@@ -32,6 +35,18 @@
 							<PropertyValue Property="Value" Path="NameFirst"/>
 							<Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High"/>
 						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="Role"/>
+							<Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High"/>
+						</Record>						
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="Xdele"/>
+							<Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High"/>
+						</Record>	
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="Crdattime"/>
+							<Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High"/>
+						</Record>	
 					</Collection>
 				</Annotation>
 			</Annotations>

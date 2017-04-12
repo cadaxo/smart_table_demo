@@ -7,7 +7,7 @@
     "targetFolder": "dist",
     "sourceFolder": "webapp",
     "buildRequired": true,
-    "lastBuildDateTime": "Fri, 07 Apr 2017 09:38:33 GMT"
+    "lastBuildDateTime": "Fri, 07 Apr 2017 09:54:47 GMT"
   },
   "generation": [
     {
@@ -46,6 +46,6 @@
   "hcpdeploy": {
     "account": "a17cc5c5c",
     "name": "zbpsmarttable",
-    "lastVersionWeTriedToDeploy": "1.0.1"
+    "lastVersionWeTriedToDeploy": "1.0.2"
   }
 }

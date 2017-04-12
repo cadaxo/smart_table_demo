@@ -1,11 +1,17 @@
 [{
 	"Partner": "111",
 	"NameLast": "SachaMock",
-	"NameFirst": "DusanMock"
+	"NameFirst": "DusanMock",
+	"Role": "Admin",
+	"Crdattime": "/Date(1491948000000)/",
+	"Xdele": true
 }, {
 	"Partner": "666",
 	"NameLast": "MuseterMock",
-	"NameFirst": "MaxMock"
+	"NameFirst": "MaxMock",
+	"Role": "User",
+	"Crdattime": "/Date(1491343200000)/",
+	"Xdele": false	
 }, {
 	"Partner": "101",
 	"NameLast": "NameLast 1",
@@ -13,7 +19,10 @@
 	"__metadata": {
 		"uri": "BusinessPartnerSet('Partner%201')",
 		"type": "ZUI5_BP_SMARTTABLE_SRV.BusinessPartner"
-	}
+	},
+	"Role": "User",
+	"Crdattime": "/Date(1491256800000)/",
+	"Xdele": true
 }, {
 	"Partner": "102",
 	"NameLast": "NameLast 2",
@@ -21,7 +30,10 @@
 	"__metadata": {
 		"uri": "BusinessPartnerSet('Partner%202')",
 		"type": "ZUI5_BP_SMARTTABLE_SRV.BusinessPartner"
-	}
+	},
+	"Role": "Developer",
+	"Crdattime": "/Date(1491343200000)/",
+	"Xdele": false
 }, {
 	"Partner": "103",
 	"NameLast": "NameLast 3",
@@ -29,7 +41,10 @@
 	"__metadata": {
 		"uri": "BusinessPartnerSet('Partner%203')",
 		"type": "ZUI5_BP_SMARTTABLE_SRV.BusinessPartner"
-	}
+	},
+	"Role": "Developer",
+	"Crdattime": "/Date(1491256800000)/",
+	"Xdele": true
 }, {
 	"Partner": "104",
 	"NameLast": "NameLast 4",
@@ -37,6 +52,8 @@
 	"__metadata": {
 		"uri": "BusinessPartnerSet('Partner%204')",
 		"type": "ZUI5_BP_SMARTTABLE_SRV.BusinessPartner"
-	}
-}
-]
+	},
+	"Role": "Developer",
+	"Crdattime": "/Date(1491429600000)/",
+	"Xdele": false
+}]
