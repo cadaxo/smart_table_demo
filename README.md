@@ -8,7 +8,7 @@ Here is [the link](https://zbpsmarttable-a17cc5c5c.dispatcher.hana.ondemand.com/
 We have also implemented [a live version](https://zbpsmarttable-a17cc5c5c.dispatcher.hana.ondemand.com/index_a4hServer.html) with an OData service in the background. Unfortunately this OData service is for private use only and if you are interessted in seeing it, please get in touch with me.
 
 ## Implemented Features
-- Display records from a (SAPgui) DB table
+- Display records from a (SAPGUI) DB table
 - Full Screen Mode Toggle
 - Export to Excel
 - All [Table Personalization Dialog](https://experience.sap.com/fiori-design-web/table-personalization-dialog/) Features
