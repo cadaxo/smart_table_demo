@@ -3,6 +3,7 @@
 	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
 		Uri="https://webidetesting8748331-a17cc5c5c.dispatcher.hana.ondemand.com/destinations/a4h_750_http_root/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
 		<edmx:Include Namespace="com.sap.vocabularies.UI.v1"/>
+		<edmx:Include Namespace="com.sap.vocabularies.Common.v1"/>
 	</edmx:Reference>
 	<edmx:DataServices m:DataServiceVersion="2.0">
 		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZUI5_BP_SMARTTABLE_SRV" xml:lang="en" sap:schema-version="1">
@@ -11,14 +12,23 @@
 					<PropertyRef Name="Partner"/>
 				</Key>
 				<Property Name="Partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="BusinessPartner" sap:updatable="false"/>
-				<Property Name="NameLast" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Last name" />
-				<Property Name="NameFirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="First name" />
-				<Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Role" />
+				<Property Name="NameLast" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Last name" sap:field-control="Name_fc" />
+				<Property Name="NameFirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="First name"/>
+				<Property Name="RoleCode" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Role" />
 				<Property Name="Xdele" Type="Edm.Boolean" Nullable="false" sap:label="Archive Flag" />
 				<Property Name="Crdattime" Type="Edm.DateTime" Nullable="false" sap:label="Created On" />
+				<Property Name="Name_fc" Type="Edm.Byte" />
+			</EntityType>
+			<EntityType Name="Role">
+				<Key>
+					<PropertyRef Name="RoleId" />
+				</Key>
+				<Property Name="RoleId" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:text="Desc" sap:label="Role Id" />
+				<Property Name="Desc" Type="Edm.String" MaxLength="40" sap:label="Description" />
 			</EntityType>
 			<EntityContainer Name="ZUI5_BP_SMARTTABLE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
 				<EntitySet Name="BusinessPartnerSet" EntityType="ZUI5_BP_SMARTTABLE_SRV.BusinessPartner" sap:content-version="1"/>
+				<EntitySet Name="RoleSet" EntityType="ZUI5_BP_SMARTTABLE_SRV.Role" sap:content-version="1"/>
 			</EntityContainer>
 			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZUI5_BP_SMARTTABLE_SRV.BusinessPartner">
 				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
@@ -36,7 +46,7 @@
 							<Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High"/>
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="Role"/>
+							<PropertyValue Property="Value" Path="RoleCode"/>
 							<Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High"/>
 						</Record>						
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
@@ -46,10 +56,34 @@
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="Crdattime"/>
 							<Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High"/>
-						</Record>	
+						</Record>
 					</Collection>
 				</Annotation>
 			</Annotations>
+			<Annotations Target="ZUI5_BP_SMARTTABLE_SRV.BusinessPartner/RoleCode"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Role" />
+						<PropertyValue Property="CollectionPath" String="RoleSet" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty"
+										PropertyPath="RoleCode" />
+									<PropertyValue Property="ValueListProperty"
+										String="RoleId" />
+								</Record>
+								<Record
+									Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty"
+										String="Desc" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>			
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
 				href="https://webidetesting8748331-a17cc5c5c.dispatcher.hana.ondemand.com/destinations/a4h_750_http_root/sap/opu/odata/sap/ZUI5_BP_SMARTTABLE_SRV/$metadata"/>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
