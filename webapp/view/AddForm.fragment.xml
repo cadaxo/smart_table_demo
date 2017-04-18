@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:smartForm="sap.ui.comp.smartform" 
+   xmlns:smartField="sap.ui.comp.smartfield">
+   <Dialog
+      id="addBusinessPartnerDialog"
+      title="Add Businesss Partner">
+   	  <content>
+   	  	<smartForm:SmartForm 
+			id="addBusinessPartnerForm"
+			editable="true"
+			title="{Name}"
+			flexEnabled="false">
+			<smartForm:Group label="Business Partner">
+				<smartForm:GroupElement>
+					<smartField:SmartField value="{Partner}" />
+				</smartForm:GroupElement>
+				<smartForm:GroupElement>
+					<smartField:SmartField value="{NameLast}" />
+				</smartForm:GroupElement>
+				<smartForm:GroupElement>
+					<smartField:SmartField value="{NameFirst}" />
+				</smartForm:GroupElement>
+				<smartForm:GroupElement>
+					<smartField:SmartField value="{RoleCode}" />
+				</smartForm:GroupElement>
+			</smartForm:Group>
+		</smartForm:SmartForm>
+   	  </content>	
+   	  <buttons>
+   	  	<Button text="Save" press="onSaveDialog"></Button>
+   	  	<Button text="Close" press="onCloseDialog"></Button>
+   	  </buttons>		
+   </Dialog>
+</core:FragmentDefinition>

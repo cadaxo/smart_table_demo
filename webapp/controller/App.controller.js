@@ -49,6 +49,23 @@ sap.ui.define([
     		var mParameters = {"groupId":"updateGroup"};
      		this.getView().getModel().update(sPath, oData, mParameters);
 		},
+		onOpenFormDialog: function() {
+			
+			var oView = this.getView();
+	        var oDialog = oView.byId("addBusinessPartnerDialog");
+	         // create dialog lazily
+	        if (!oDialog) {
+	           // create dialog via fragment factory
+	           oDialog = sap.ui.xmlfragment(oView.getId(), "zbp_smarttable.view.AddForm", this);
+	           oView.addDependent(oDialog);
+	        }
+	
+	        oDialog.open();
+	        var oEntry = this.getModel().createEntry("/BusinessPartnerSet('1666')",{properties:{"Partner":"1666","NameLast":"", "NameFirst":"", "RoleCode":"", "Name_fc":"", "Xdele":"", "Crdattime":""}});
+	        //this.getView().byId("addBusinessPartnerDialog").bindElement(oEntry.getPath());
+	        this.getView().byId("addBusinessPartnerDialog").setBindingContext(oEntry);
+	         
+		},
 		onSave: function(oEvent) {
 			var oModel = this.getView().getModel();
 	    	oModel.submitChanges({
@@ -64,6 +81,11 @@ sap.ui.define([
 			    actions: [sap.m.MessageBox.Action.DELETE, sap.m.MessageBox.Action.CANCEL],
 			    textDirection: sap.ui.core.TextDirection.Inherit    
 			});
+		},
+		onCloseDialog: function(oEvent) {
+			this.getModel().deleteCreatedEntry(this.getView().byId("addBusinessPartnerDialog").getBindingContext());
+			this.getModel().refresh();
+			oEvent.getSource().getParent().close();	
 		},
 		_deleteAction: function(oAction) {
 			if(oAction === sap.m.MessageBox.Action.DELETE) {

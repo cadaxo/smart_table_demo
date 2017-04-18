@@ -43,7 +43,7 @@
 						<smartTable:customToolbar>
 							<OverflowToolbar>
 								<ToolbarSpacer />
-								<Button icon="sap-icon://add" press="onAdd"/>
+								<Button icon="sap-icon://add" press="onOpenFormDialog"/>
 								<Button id="deleteButton" icon="sap-icon://delete" press="onDelete" enabled="false" />
 								<Button id="saveButton" icon="sap-icon://save" press="onSave" enabled="true" />
 							</OverflowToolbar>	
