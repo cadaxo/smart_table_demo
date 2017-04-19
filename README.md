@@ -18,9 +18,15 @@ We have also implemented [a live version](https://zbpsmarttable-a17cc5c5c.dispat
 - Save Data to DB
 
 ## Planned Features
-- Add Date, Checkbox, Drobdown elements to View
-- Add Insert item Option
 - Variant Management
+- Business Partner ID generated in Backend
+- Last Name, First Name required - validation (check next paragraph)
+- Role Validation according to Search Help values
+
+## Last Name, First Name required - validation
+Validation should be done just in metadata.xml description. Nevertheless I am having issues with implementation:
+- [stackoverflow.com/questions/43409026/sapui5-smart-table-smart-field-make-field-mandatory-with-annotation](https://stackoverflow.com/questions/43409026/sapui5-smart-table-smart-field-make-field-mandatory-with-annotation)
+- [answers.sap.com/questions/178531/sapui5-smart-table-smart-field-make-field-mandator.html](https://answers.sap.com/questions/178531/sapui5-smart-table-smart-field-make-field-mandator.html)
 
 ## Made By
 [Cadaxo](http://www.cadaxo.com/), Dusan Sacha  
