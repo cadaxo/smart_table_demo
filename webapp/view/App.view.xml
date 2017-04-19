@@ -54,6 +54,7 @@
 					<Bar>
 						<contentMiddle>
 							<Text text="{i18n>copyright}" />
+							<Link text="Cadaxo" target="_blank" href="http://www.cadaxo.com/" />
 						</contentMiddle>
 					</Bar>
 				</footer>

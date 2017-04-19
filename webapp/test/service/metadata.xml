@@ -17,7 +17,7 @@
 				<Property Name="RoleCode" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Role" />
 				<Property Name="Xdele" Type="Edm.Boolean" Nullable="false" sap:label="Archive Flag" />
 				<Property Name="Crdattime" Type="Edm.DateTime" Nullable="false" sap:label="Created On" />
-				<Property Name="Name_fc" Type="Edm.Byte" />
+				<Property Name="Name_fc" Type="Edm.Byte" sap:filterable="false" />
 			</EntityType>
 			<EntityType Name="Role">
 				<Key>

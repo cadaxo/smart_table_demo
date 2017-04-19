@@ -1,5 +1,5 @@
 [{
-	"Partner": "111",
+	"Partner": "0000000111",
 	"NameLast": "SachaMock",
 	"NameFirst": "DusanMock",
 	"Crdattime": "/Date(1491948000000)/",
@@ -7,7 +7,7 @@
 	"Name_fc": 7,
 	"RoleCode": "DEVELOPER"
 }, {
-	"Partner": "666",
+	"Partner": "0000000666",
 	"NameLast": "MuseterMock",
 	"NameFirst": "MaxMock",
 	"Crdattime": "/Date(1491343200000)/",
@@ -15,7 +15,7 @@
 	"Name_fc": 7,
 	"RoleCode": "USER"
 }, {
-	"Partner": "101",
+	"Partner": "0000000101",
 	"NameLast": "NameLast 1",
 	"NameFirst": "NameFirst 1",
 	"__metadata": {
@@ -27,7 +27,7 @@
 	"Name_fc": 7,
 	"RoleCode": "ADMIN"
 }, {
-	"Partner": "102",
+	"Partner": "0000000102",
 	"NameLast": "NameLast 2",
 	"NameFirst": "NameFirst 2",
 	"__metadata": {
@@ -39,7 +39,7 @@
 	"Name_fc": 7,
 	"RoleCode": "ADMIN"
 }, {
-	"Partner": "103",
+	"Partner": "0000000103",
 	"NameLast": "NameLast 3",
 	"NameFirst": "NameFirst 3",
 	"__metadata": {
@@ -51,7 +51,7 @@
 	"Name_fc": 7,
 	"RoleCode": "ADMIN"
 }, {
-	"Partner": "104",
+	"Partner": "0000000104",
 	"NameLast": "NameLast 4",
 	"NameFirst": "NameFirst 4",
 	"__metadata": {
