@@ -1,11 +1,11 @@
 [{
 	"RoleId": "ADMIN",
-	"Desc": "Administrator Role"
+	"RoleDesc": "Administrator Role"
 }, {
 	"RoleId": "DEVELOPER",
-	"Desc": "Developer Role"
+	"RoleDesc": "Developer Role"
 },
 {
 	"RoleId": "USER",
-	"Desc": "User Role"
+	"RoleDesc": "User Role"
 }]

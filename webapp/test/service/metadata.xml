@@ -23,8 +23,8 @@
 				<Key>
 					<PropertyRef Name="RoleId" />
 				</Key>
-				<Property Name="RoleId" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:text="Desc" sap:label="Role Id" />
-				<Property Name="Desc" Type="Edm.String" MaxLength="40" sap:label="Description" />
+				<Property Name="RoleId" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:text="RoleDesc" sap:label="Role Id" />
+				<Property Name="RoleDesc" Type="Edm.String" MaxLength="40" sap:label="Description" />
 			</EntityType>
 			<EntityContainer Name="ZUI5_BP_SMARTTABLE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
 				<EntitySet Name="BusinessPartnerSet" EntityType="ZUI5_BP_SMARTTABLE_SRV.BusinessPartner" sap:content-version="1"/>
@@ -77,7 +77,7 @@
 								<Record
 									Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
 									<PropertyValue Property="ValueListProperty"
-										String="Desc" />
+										String="RoleDesc" />
 								</Record>
 							</Collection>
 						</PropertyValue>

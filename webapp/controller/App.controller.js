@@ -32,7 +32,7 @@ sap.ui.define([
 		},
 		_onCreateModeMetadataLoaded: function() {
 			this.getView().getModel().setUseBatch(true);
-			this.getView().getModel().setDeferredGroups(["updateGroup","deleteGroup"]);
+			this.getView().getModel().setDeferredGroups(["updateGroup","deleteGroup","createGroup"]);
 			this.getView().getModel().setChangeGroups({
 			  "BusinessPartner": {
 			    groupId: "updateGroup",
@@ -61,14 +61,36 @@ sap.ui.define([
 	        }
 	
 	        oDialog.open();
-	        var oEntry = this.getModel().createEntry("/BusinessPartnerSet('1666')",{properties:{"Partner":"1666","NameLast":"", "NameFirst":"", "RoleCode":"", "Name_fc":"", "Xdele":"", "Crdattime":""}});
-	        //this.getView().byId("addBusinessPartnerDialog").bindElement(oEntry.getPath());
+	        
+	        var aTableItems = this._getSmartTableById().getTable().getItems();
+	        var aPartnerIDs = [];
+	        aTableItems.forEach(function(oItem){
+	        	aPartnerIDs.push(oItem.getCells()[0].getValue());
+	        });
+	        var sNewId = (Math.max(...aPartnerIDs) + 1).toString();
+	        
+	        while (sNewId.length < 10) {
+	        	sNewId = '0' + sNewId;
+	        }
+	        
+	        var mParameters = {
+	        	"groupId":"createGroup",
+	        	"properties" : {
+	        		"Partner":sNewId,
+		        	"NameLast":"",
+		        	"NameFirst":"",
+		        	"RoleCode":"",
+		        	"Name_fc":7,
+		        	"Xdele":false,
+		        	"Crdattime":new Date()
+	        	}
+	        };
+	        var oEntry = this.getModel().createEntry("/BusinessPartnerSet", mParameters);
 	        this.getView().byId("addBusinessPartnerDialog").setBindingContext(oEntry);
 	         
 		},
 		onSave: function(oEvent) {
-			var oModel = this.getView().getModel();
-	    	oModel.submitChanges({
+	    	this.getModel().submitChanges({
 	      		groupId: "updateGroup", 
 	        	success: this._handleUpdateSuccess.bind(this),
 	        	error: this._handleUpdateError.bind(this)
@@ -84,8 +106,15 @@ sap.ui.define([
 		},
 		onCloseDialog: function(oEvent) {
 			this.getModel().deleteCreatedEntry(this.getView().byId("addBusinessPartnerDialog").getBindingContext());
-			this.getModel().refresh();
 			oEvent.getSource().getParent().close();	
+		},
+		onSaveDialog: function(oEvent) {
+	    	this.getModel().submitChanges({
+	      		groupId: "createGroup", 
+	        	success: this._handleCreateSuccess.bind(this),
+	        	error: this._handleCreateError.bind(this)
+	     	});
+	     	oEvent.getSource().getParent().close();	
 		},
 		_deleteAction: function(oAction) {
 			if(oAction === sap.m.MessageBox.Action.DELETE) {
@@ -115,6 +144,12 @@ sap.ui.define([
 		},
 		_handleDeleteError: function(oError) {
 			MessageBox.error(this.getResourceBundle().getText("deleteError"));
-		}
+		},
+		_handleCreateSuccess: function(oData) {
+			MessageToast.show(this.getResourceBundle().getText("createSuccess"));
+		},
+		_handleCreateError: function(oError) {
+			MessageBox.error(this.getResourceBundle().getText("createError"));
+		}		
 	});
 });
